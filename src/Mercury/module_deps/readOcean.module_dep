@@ -1,0 +1,14 @@
+module(2, "readOcean.m",
+	readOcean,
+	{},
+	{builtin, io, private_builtin},
+	{reader},
+	{},
+	{},
+	{},
+	{},
+	{},
+	no_foreign_export,
+	no_main,
+	{}
+).

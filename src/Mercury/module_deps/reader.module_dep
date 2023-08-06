@@ -1,0 +1,14 @@
+module(2, "reader.m",
+	reader,
+	{},
+	{builtin, io, private_builtin},
+	{dir, string},
+	{},
+	{},
+	{},
+	{},
+	{},
+	no_foreign_export,
+	no_main,
+	{}
+).

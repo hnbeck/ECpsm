@@ -1,0 +1,5 @@
+:- module reader.
+:- interface.
+:- use_module io.
+:- pred readerMain(io.io, io.io).
+:- mode readerMain((builtin.di), (builtin.uo)) is det.
