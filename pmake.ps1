@@ -16,16 +16,23 @@ $Path = $AppDir + "\src"
 write-output "Application compile at $AppDir, sources at $Path"
 
 Push-Location $Path
-mercury -r -E $App
+try {
+    mercury -r -E  $App
+} 
+catch {
+   Write-Output "Error during compilation"
+   exit
+}
+
 Start-Sleep 1
 
 # this is because something (the cp) in the make don't work on Windows 11
 try {
-    Move-Item -Path ./*.exe -Destination ../bin/
+    Move-Item -Path ./*.exe -Destination ../bin/ -Force 
     Get-Item ./*.* | ForEach-Object {
             if ((Get-ChildItem $_).Extension -ne ".m") 
-                {  
-                    Move-Item $_ -Destination ../tmp}}
+                {   Write-Output "Move File: $_"
+                    Move-Item $_ -Destination ../tmp -Force }}
 } catch {
     write-output "Error during clean-up - check files!"
 }

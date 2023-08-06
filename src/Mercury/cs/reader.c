@@ -67,22 +67,22 @@ ENDINIT
 #else
 #define MR_STATIC_LINKAGE static
 #endif
-MR_decl_label10(reader__readerMain_2_0, 2,3,6,4,8,10,12,14,15,18)
+MR_decl_label8(reader__readerMain_2_0, 2,3,6,8,10,12,13,16)
 MR_def_extern_entry(reader__readerMain_2_0)
 
 
 
-MR_decl_entry(io__write_string_3_0);
 MR_decl_entry(dir__current_directory_3_0);
-MR_decl_entry(fn__string__append_2_0);
+MR_decl_entry(logger__logMsg_3_0);
 MR_decl_entry(io__open_input_4_0);
+MR_decl_entry(io__write_string_3_0);
 MR_decl_entry(io__read_file_as_string_4_0);
 MR_decl_entry(io__close_input_3_0);
 
 MR_BEGIN_MODULE(reader_module0)
 	MR_init_entry1(reader__readerMain_2_0);
 	MR_INIT_PROC_LAYOUT_ADDR(mercury__reader__readerMain_2_0);
-	MR_init_label10(reader__readerMain_2_0,2,3,6,4,8,10,12,14,15,18)
+	MR_init_label8(reader__readerMain_2_0,2,3,6,8,10,12,13,16)
 MR_BEGIN_CODE
 
 /*-------------------------------------------------------------------------*/
@@ -95,55 +95,45 @@ MR_define_entry(mercury__reader__readerMain_2_0);
 	MR_MAYBE_INIT_LOCAL_THREAD_ENGINE_BASE
 	MR_incr_sp(2);
 	MR_sv(2) = ((MR_Word) MR_succip);
-	MR_r1 = ((MR_Word) MR_string_const("Hello!\n", 7));
-	MR_np_call_localret_ent(io__write_string_3_0,
+	MR_np_call_localret_ent(dir__current_directory_3_0,
 		reader__readerMain_2_0_i2);
 MR_def_label(reader__readerMain_2_0, 2)
 	MR_MAYBE_INIT_LOCAL_THREAD_ENGINE_BASE
-	MR_np_call_localret_ent(dir__current_directory_3_0,
-		reader__readerMain_2_0_i3);
-MR_def_label(reader__readerMain_2_0, 3)
-	MR_MAYBE_INIT_LOCAL_THREAD_ENGINE_BASE
 	if (MR_INT_NE(MR_tag(MR_r1),0)) {
-		MR_GOTO_LAB(reader__readerMain_2_0_i4);
+		MR_GOTO_LAB(reader__readerMain_2_0_i3);
 	}
 	MR_r1 = MR_tfield(0, MR_r1, 0);
-	MR_r2 = ((MR_Word) MR_string_const("\n", 1));
-	MR_np_call_localret_ent(fn__string__append_2_0,
+	MR_np_call_localret_ent(logger__logMsg_3_0,
+		reader__readerMain_2_0_i6);
+MR_def_label(reader__readerMain_2_0, 3)
+	MR_MAYBE_INIT_LOCAL_THREAD_ENGINE_BASE
+	MR_r1 = ((MR_Word) MR_string_const("Something went wrong", 20));
+	MR_np_call_localret_ent(logger__logMsg_3_0,
 		reader__readerMain_2_0_i6);
 MR_def_label(reader__readerMain_2_0, 6)
 	MR_MAYBE_INIT_LOCAL_THREAD_ENGINE_BASE
-	MR_np_call_localret_ent(io__write_string_3_0,
-		reader__readerMain_2_0_i8);
-MR_def_label(reader__readerMain_2_0, 4)
-	MR_MAYBE_INIT_LOCAL_THREAD_ENGINE_BASE
-	MR_r1 = ((MR_Word) MR_string_const("Something wrong\n", 16));
-	MR_np_call_localret_ent(io__write_string_3_0,
+	MR_r1 = ((MR_Word) MR_string_const("C:/Dev/Workspace/MercuryTest/TCL/testfile.txt", 45));
+	MR_np_call_localret_ent(io__open_input_4_0,
 		reader__readerMain_2_0_i8);
 MR_def_label(reader__readerMain_2_0, 8)
 	MR_MAYBE_INIT_LOCAL_THREAD_ENGINE_BASE
-	MR_r1 = ((MR_Word) MR_string_const("C:/Dev/Workspace/MercuryTest/TCL/testfile.txt", 45));
-	MR_np_call_localret_ent(io__open_input_4_0,
-		reader__readerMain_2_0_i10);
-MR_def_label(reader__readerMain_2_0, 10)
-	MR_MAYBE_INIT_LOCAL_THREAD_ENGINE_BASE
 	if (MR_INT_NE(MR_tag(MR_r1),1)) {
-		MR_GOTO_LAB(reader__readerMain_2_0_i12);
+		MR_GOTO_LAB(reader__readerMain_2_0_i10);
 	}
 	MR_sv(1) = ((MR_Word) MR_string_const("", 0));
 	MR_r1 = ((MR_Word) MR_string_const("Fail", 4));
 	MR_np_call_localret_ent(io__write_string_3_0,
-		reader__readerMain_2_0_i18);
-MR_def_label(reader__readerMain_2_0, 12)
+		reader__readerMain_2_0_i16);
+MR_def_label(reader__readerMain_2_0, 10)
 	MR_MAYBE_INIT_LOCAL_THREAD_ENGINE_BASE
 	MR_sv(1) = MR_tfield(0, MR_r1, 0);
 	MR_r1 = MR_sv(1);
 	MR_np_call_localret_ent(io__read_file_as_string_4_0,
-		reader__readerMain_2_0_i14);
-MR_def_label(reader__readerMain_2_0, 14)
+		reader__readerMain_2_0_i12);
+MR_def_label(reader__readerMain_2_0, 12)
 	MR_MAYBE_INIT_LOCAL_THREAD_ENGINE_BASE
 	if (MR_INT_NE(MR_tag(MR_r1),0)) {
-		MR_GOTO_LAB(reader__readerMain_2_0_i15);
+		MR_GOTO_LAB(reader__readerMain_2_0_i13);
 	}
 	{
 	MR_Word MR_tempr1;
@@ -152,8 +142,8 @@ MR_def_label(reader__readerMain_2_0, 14)
 	MR_r1 = MR_tempr1;
 	}
 	MR_np_call_localret_ent(io__close_input_3_0,
-		reader__readerMain_2_0_i18);
-MR_def_label(reader__readerMain_2_0, 15)
+		reader__readerMain_2_0_i16);
+MR_def_label(reader__readerMain_2_0, 13)
 	MR_MAYBE_INIT_LOCAL_THREAD_ENGINE_BASE
 	{
 	MR_Word MR_tempr1;
@@ -162,13 +152,13 @@ MR_def_label(reader__readerMain_2_0, 15)
 	MR_r1 = MR_tempr1;
 	}
 	MR_np_call_localret_ent(io__close_input_3_0,
-		reader__readerMain_2_0_i18);
-MR_def_label(reader__readerMain_2_0, 18)
+		reader__readerMain_2_0_i16);
+MR_def_label(reader__readerMain_2_0, 16)
 	MR_MAYBE_INIT_LOCAL_THREAD_ENGINE_BASE
 	MR_r1 = MR_sv(1);
 	MR_succip_word = MR_sv(2);
 	MR_decr_sp(2);
-	MR_np_tailcall_ent(io__write_string_3_0);
+	MR_np_tailcall_ent(logger__logMsg_3_0);
 #ifdef MR_maybe_local_thread_engine_base
 	#undef MR_maybe_local_thread_engine_base
 	#define MR_maybe_local_thread_engine_base MR_thread_engine_base

@@ -1,0 +1,7 @@
+:- module logger.
+:- interface.
+:- use_module io.
+:- use_module list.
+:- use_module string.
+:- pred logMsg(string, io.io, io.io).
+:- mode logMsg((builtin.in), (builtin.di), (builtin.uo)) is det.

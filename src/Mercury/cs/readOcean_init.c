@@ -4,6 +4,7 @@
 ** Grade: asm_fast.gc
 ** Input files:
 **
+** Mercury\cs\logger.c
 ** Mercury\cs\readOcean.c
 ** Mercury\cs\reader.c
 ** C:\Dev\Mercury\lib\mercury\modules\asm_fast.gc\mer_rt.init
@@ -45,6 +46,8 @@ static void init_gc(void)
 
 static void init_modules_0(void)
 {
+	{ extern void mercury__logger__init(void);
+	  mercury__logger__init(); }
 	{ extern void mercury__readOcean__init(void);
 	  mercury__readOcean__init(); }
 	{ extern void mercury__reader__init(void);
@@ -123,12 +126,12 @@ static void init_modules_0(void)
 	  mercury__int16__init(); }
 	{ extern void mercury__int32__init(void);
 	  mercury__int32__init(); }
-	{ extern void mercury__int64__init(void);
-	  mercury__int64__init(); }
 }
 
 static void init_modules_1(void)
 {
+	{ extern void mercury__int64__init(void);
+	  mercury__int64__init(); }
 	{ extern void mercury__int8__init(void);
 	  mercury__int8__init(); }
 	{ extern void mercury__integer__init(void);
@@ -207,12 +210,12 @@ static void init_modules_1(void)
 	  mercury__region_builtin__init(); }
 	{ extern void mercury__require__init(void);
 	  mercury__require__init(); }
-	{ extern void mercury__robdd__init(void);
-	  mercury__robdd__init(); }
 }
 
 static void init_modules_2(void)
 {
+	{ extern void mercury__robdd__init(void);
+	  mercury__robdd__init(); }
 	{ extern void mercury__rtree__init(void);
 	  mercury__rtree__init(); }
 	{ extern void mercury__rtti_implementation__init(void);
@@ -291,12 +294,12 @@ static void init_modules_2(void)
 	  mercury__time__init(); }
 	{ extern void mercury__tree234__init(void);
 	  mercury__tree234__init(); }
-	{ extern void mercury__tree_bitset__init(void);
-	  mercury__tree_bitset__init(); }
 }
 
 static void init_modules_3(void)
 {
+	{ extern void mercury__tree_bitset__init(void);
+	  mercury__tree_bitset__init(); }
 	{ extern void mercury__type_desc__init(void);
 	  mercury__type_desc__init(); }
 	{ extern void mercury__uint__init(void);
@@ -378,6 +381,8 @@ static void init_modules(void)
 
 static void init_modules_type_tables_0(void)
 {
+	{ extern void mercury__logger__init_type_tables(void);
+	  mercury__logger__init_type_tables(); }
 	{ extern void mercury__readOcean__init_type_tables(void);
 	  mercury__readOcean__init_type_tables(); }
 	{ extern void mercury__reader__init_type_tables(void);
@@ -456,12 +461,12 @@ static void init_modules_type_tables_0(void)
 	  mercury__int16__init_type_tables(); }
 	{ extern void mercury__int32__init_type_tables(void);
 	  mercury__int32__init_type_tables(); }
-	{ extern void mercury__int64__init_type_tables(void);
-	  mercury__int64__init_type_tables(); }
 }
 
 static void init_modules_type_tables_1(void)
 {
+	{ extern void mercury__int64__init_type_tables(void);
+	  mercury__int64__init_type_tables(); }
 	{ extern void mercury__int8__init_type_tables(void);
 	  mercury__int8__init_type_tables(); }
 	{ extern void mercury__integer__init_type_tables(void);
@@ -540,12 +545,12 @@ static void init_modules_type_tables_1(void)
 	  mercury__region_builtin__init_type_tables(); }
 	{ extern void mercury__require__init_type_tables(void);
 	  mercury__require__init_type_tables(); }
-	{ extern void mercury__robdd__init_type_tables(void);
-	  mercury__robdd__init_type_tables(); }
 }
 
 static void init_modules_type_tables_2(void)
 {
+	{ extern void mercury__robdd__init_type_tables(void);
+	  mercury__robdd__init_type_tables(); }
 	{ extern void mercury__rtree__init_type_tables(void);
 	  mercury__rtree__init_type_tables(); }
 	{ extern void mercury__rtti_implementation__init_type_tables(void);
@@ -624,12 +629,12 @@ static void init_modules_type_tables_2(void)
 	  mercury__time__init_type_tables(); }
 	{ extern void mercury__tree234__init_type_tables(void);
 	  mercury__tree234__init_type_tables(); }
-	{ extern void mercury__tree_bitset__init_type_tables(void);
-	  mercury__tree_bitset__init_type_tables(); }
 }
 
 static void init_modules_type_tables_3(void)
 {
+	{ extern void mercury__tree_bitset__init_type_tables(void);
+	  mercury__tree_bitset__init_type_tables(); }
 	{ extern void mercury__type_desc__init_type_tables(void);
 	  mercury__type_desc__init_type_tables(); }
 	{ extern void mercury__uint__init_type_tables(void);
@@ -709,6 +714,8 @@ static void init_modules_type_tables(void)
 
 static void init_modules_debugger_0(void)
 {
+	{ extern void mercury__logger__init_debugger(void);
+	  mercury__logger__init_debugger(); }
 	{ extern void mercury__readOcean__init_debugger(void);
 	  mercury__readOcean__init_debugger(); }
 	{ extern void mercury__reader__init_debugger(void);
@@ -787,12 +794,12 @@ static void init_modules_debugger_0(void)
 	  mercury__int16__init_debugger(); }
 	{ extern void mercury__int32__init_debugger(void);
 	  mercury__int32__init_debugger(); }
-	{ extern void mercury__int64__init_debugger(void);
-	  mercury__int64__init_debugger(); }
 }
 
 static void init_modules_debugger_1(void)
 {
+	{ extern void mercury__int64__init_debugger(void);
+	  mercury__int64__init_debugger(); }
 	{ extern void mercury__int8__init_debugger(void);
 	  mercury__int8__init_debugger(); }
 	{ extern void mercury__integer__init_debugger(void);
@@ -871,12 +878,12 @@ static void init_modules_debugger_1(void)
 	  mercury__region_builtin__init_debugger(); }
 	{ extern void mercury__require__init_debugger(void);
 	  mercury__require__init_debugger(); }
-	{ extern void mercury__robdd__init_debugger(void);
-	  mercury__robdd__init_debugger(); }
 }
 
 static void init_modules_debugger_2(void)
 {
+	{ extern void mercury__robdd__init_debugger(void);
+	  mercury__robdd__init_debugger(); }
 	{ extern void mercury__rtree__init_debugger(void);
 	  mercury__rtree__init_debugger(); }
 	{ extern void mercury__rtti_implementation__init_debugger(void);
@@ -955,12 +962,12 @@ static void init_modules_debugger_2(void)
 	  mercury__time__init_debugger(); }
 	{ extern void mercury__tree234__init_debugger(void);
 	  mercury__tree234__init_debugger(); }
-	{ extern void mercury__tree_bitset__init_debugger(void);
-	  mercury__tree_bitset__init_debugger(); }
 }
 
 static void init_modules_debugger_3(void)
 {
+	{ extern void mercury__tree_bitset__init_debugger(void);
+	  mercury__tree_bitset__init_debugger(); }
 	{ extern void mercury__type_desc__init_debugger(void);
 	  mercury__type_desc__init_debugger(); }
 	{ extern void mercury__uint__init_debugger(void);
@@ -1008,6 +1015,8 @@ static void init_modules_debugger(void)
 
 static void init_modules_complexity_procs_0(void)
 {
+	{ extern void mercury__logger__init_complexity_procs(void);
+	  mercury__logger__init_complexity_procs(); }
 	{ extern void mercury__readOcean__init_complexity_procs(void);
 	  mercury__readOcean__init_complexity_procs(); }
 	{ extern void mercury__reader__init_complexity_procs(void);
@@ -1086,12 +1095,12 @@ static void init_modules_complexity_procs_0(void)
 	  mercury__int16__init_complexity_procs(); }
 	{ extern void mercury__int32__init_complexity_procs(void);
 	  mercury__int32__init_complexity_procs(); }
-	{ extern void mercury__int64__init_complexity_procs(void);
-	  mercury__int64__init_complexity_procs(); }
 }
 
 static void init_modules_complexity_procs_1(void)
 {
+	{ extern void mercury__int64__init_complexity_procs(void);
+	  mercury__int64__init_complexity_procs(); }
 	{ extern void mercury__int8__init_complexity_procs(void);
 	  mercury__int8__init_complexity_procs(); }
 	{ extern void mercury__integer__init_complexity_procs(void);
@@ -1170,12 +1179,12 @@ static void init_modules_complexity_procs_1(void)
 	  mercury__region_builtin__init_complexity_procs(); }
 	{ extern void mercury__require__init_complexity_procs(void);
 	  mercury__require__init_complexity_procs(); }
-	{ extern void mercury__robdd__init_complexity_procs(void);
-	  mercury__robdd__init_complexity_procs(); }
 }
 
 static void init_modules_complexity_procs_2(void)
 {
+	{ extern void mercury__robdd__init_complexity_procs(void);
+	  mercury__robdd__init_complexity_procs(); }
 	{ extern void mercury__rtree__init_complexity_procs(void);
 	  mercury__rtree__init_complexity_procs(); }
 	{ extern void mercury__rtti_implementation__init_complexity_procs(void);
@@ -1254,12 +1263,12 @@ static void init_modules_complexity_procs_2(void)
 	  mercury__time__init_complexity_procs(); }
 	{ extern void mercury__tree234__init_complexity_procs(void);
 	  mercury__tree234__init_complexity_procs(); }
-	{ extern void mercury__tree_bitset__init_complexity_procs(void);
-	  mercury__tree_bitset__init_complexity_procs(); }
 }
 
 static void init_modules_complexity_procs_3(void)
 {
+	{ extern void mercury__tree_bitset__init_complexity_procs(void);
+	  mercury__tree_bitset__init_complexity_procs(); }
 	{ extern void mercury__type_desc__init_complexity_procs(void);
 	  mercury__type_desc__init_complexity_procs(); }
 	{ extern void mercury__uint__init_complexity_procs(void);
@@ -1309,6 +1318,8 @@ static void init_modules_complexity_procs(void)
 
 static void write_out_proc_statics_0(FILE *deep_fp, FILE *procrep_fp)
 {
+	{ extern void mercury__logger__write_out_proc_statics(FILE *, FILE *);
+	  mercury__logger__write_out_proc_statics(deep_fp, procrep_fp); }
 	{ extern void mercury__readOcean__write_out_proc_statics(FILE *, FILE *);
 	  mercury__readOcean__write_out_proc_statics(deep_fp, procrep_fp); }
 	{ extern void mercury__reader__write_out_proc_statics(FILE *, FILE *);
@@ -1387,12 +1398,12 @@ static void write_out_proc_statics_0(FILE *deep_fp, FILE *procrep_fp)
 	  mercury__int16__write_out_proc_statics(deep_fp, procrep_fp); }
 	{ extern void mercury__int32__write_out_proc_statics(FILE *, FILE *);
 	  mercury__int32__write_out_proc_statics(deep_fp, procrep_fp); }
-	{ extern void mercury__int64__write_out_proc_statics(FILE *, FILE *);
-	  mercury__int64__write_out_proc_statics(deep_fp, procrep_fp); }
 }
 
 static void write_out_proc_statics_1(FILE *deep_fp, FILE *procrep_fp)
 {
+	{ extern void mercury__int64__write_out_proc_statics(FILE *, FILE *);
+	  mercury__int64__write_out_proc_statics(deep_fp, procrep_fp); }
 	{ extern void mercury__int8__write_out_proc_statics(FILE *, FILE *);
 	  mercury__int8__write_out_proc_statics(deep_fp, procrep_fp); }
 	{ extern void mercury__integer__write_out_proc_statics(FILE *, FILE *);
@@ -1471,12 +1482,12 @@ static void write_out_proc_statics_1(FILE *deep_fp, FILE *procrep_fp)
 	  mercury__region_builtin__write_out_proc_statics(deep_fp, procrep_fp); }
 	{ extern void mercury__require__write_out_proc_statics(FILE *, FILE *);
 	  mercury__require__write_out_proc_statics(deep_fp, procrep_fp); }
-	{ extern void mercury__robdd__write_out_proc_statics(FILE *, FILE *);
-	  mercury__robdd__write_out_proc_statics(deep_fp, procrep_fp); }
 }
 
 static void write_out_proc_statics_2(FILE *deep_fp, FILE *procrep_fp)
 {
+	{ extern void mercury__robdd__write_out_proc_statics(FILE *, FILE *);
+	  mercury__robdd__write_out_proc_statics(deep_fp, procrep_fp); }
 	{ extern void mercury__rtree__write_out_proc_statics(FILE *, FILE *);
 	  mercury__rtree__write_out_proc_statics(deep_fp, procrep_fp); }
 	{ extern void mercury__rtti_implementation__write_out_proc_statics(FILE *, FILE *);
@@ -1555,12 +1566,12 @@ static void write_out_proc_statics_2(FILE *deep_fp, FILE *procrep_fp)
 	  mercury__time__write_out_proc_statics(deep_fp, procrep_fp); }
 	{ extern void mercury__tree234__write_out_proc_statics(FILE *, FILE *);
 	  mercury__tree234__write_out_proc_statics(deep_fp, procrep_fp); }
-	{ extern void mercury__tree_bitset__write_out_proc_statics(FILE *, FILE *);
-	  mercury__tree_bitset__write_out_proc_statics(deep_fp, procrep_fp); }
 }
 
 static void write_out_proc_statics_3(FILE *deep_fp, FILE *procrep_fp)
 {
+	{ extern void mercury__tree_bitset__write_out_proc_statics(FILE *, FILE *);
+	  mercury__tree_bitset__write_out_proc_statics(deep_fp, procrep_fp); }
 	{ extern void mercury__type_desc__write_out_proc_statics(FILE *, FILE *);
 	  mercury__type_desc__write_out_proc_statics(deep_fp, procrep_fp); }
 	{ extern void mercury__uint__write_out_proc_statics(FILE *, FILE *);
@@ -1646,6 +1657,8 @@ static void write_out_proc_statics(FILE *deep_fp, FILE *procrep_fp)
 
 static void init_modules_threadscope_string_table_0(void)
 {
+	{ extern void mercury__logger__init_threadscope_string_table(void);
+	  mercury__logger__init_threadscope_string_table(); }
 	{ extern void mercury__readOcean__init_threadscope_string_table(void);
 	  mercury__readOcean__init_threadscope_string_table(); }
 	{ extern void mercury__reader__init_threadscope_string_table(void);
@@ -1724,12 +1737,12 @@ static void init_modules_threadscope_string_table_0(void)
 	  mercury__int16__init_threadscope_string_table(); }
 	{ extern void mercury__int32__init_threadscope_string_table(void);
 	  mercury__int32__init_threadscope_string_table(); }
-	{ extern void mercury__int64__init_threadscope_string_table(void);
-	  mercury__int64__init_threadscope_string_table(); }
 }
 
 static void init_modules_threadscope_string_table_1(void)
 {
+	{ extern void mercury__int64__init_threadscope_string_table(void);
+	  mercury__int64__init_threadscope_string_table(); }
 	{ extern void mercury__int8__init_threadscope_string_table(void);
 	  mercury__int8__init_threadscope_string_table(); }
 	{ extern void mercury__integer__init_threadscope_string_table(void);
@@ -1808,12 +1821,12 @@ static void init_modules_threadscope_string_table_1(void)
 	  mercury__region_builtin__init_threadscope_string_table(); }
 	{ extern void mercury__require__init_threadscope_string_table(void);
 	  mercury__require__init_threadscope_string_table(); }
-	{ extern void mercury__robdd__init_threadscope_string_table(void);
-	  mercury__robdd__init_threadscope_string_table(); }
 }
 
 static void init_modules_threadscope_string_table_2(void)
 {
+	{ extern void mercury__robdd__init_threadscope_string_table(void);
+	  mercury__robdd__init_threadscope_string_table(); }
 	{ extern void mercury__rtree__init_threadscope_string_table(void);
 	  mercury__rtree__init_threadscope_string_table(); }
 	{ extern void mercury__rtti_implementation__init_threadscope_string_table(void);
@@ -1892,12 +1905,12 @@ static void init_modules_threadscope_string_table_2(void)
 	  mercury__time__init_threadscope_string_table(); }
 	{ extern void mercury__tree234__init_threadscope_string_table(void);
 	  mercury__tree234__init_threadscope_string_table(); }
-	{ extern void mercury__tree_bitset__init_threadscope_string_table(void);
-	  mercury__tree_bitset__init_threadscope_string_table(); }
 }
 
 static void init_modules_threadscope_string_table_3(void)
 {
+	{ extern void mercury__tree_bitset__init_threadscope_string_table(void);
+	  mercury__tree_bitset__init_threadscope_string_table(); }
 	{ extern void mercury__type_desc__init_threadscope_string_table(void);
 	  mercury__type_desc__init_threadscope_string_table(); }
 	{ extern void mercury__uint__init_threadscope_string_table(void);

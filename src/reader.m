@@ -10,23 +10,23 @@
 
 :- import_module dir.
 :- import_module string.
+:- import_module logger.
 
 :- pred streamOpen( io.res(io.text_input_stream)::in, string::out, io::di, io::uo) is det.
 
+
 readerMain(!IO) :-
-    write_string("Hello!\n", !IO),
     current_directory(Result, !IO),
     (if 
         Result = ok(String)
     then
-        Msg = append(String, "\n"),
-        write_string(Msg, !IO)
+        logMsg(String, !IO)
     else
-        write_string("Something wrong\n", !IO)
+       logMsg("Something went wrong", !IO)
     ),
     open_input("C:/Dev/Workspace/MercuryTest/TCL/testfile.txt", Result2, !IO),
     streamOpen(Result2, Content, !IO),
-    write_string(Content, !IO).
+    logMsg(Content, !IO).
     
 
 % streamOpen(Result, ContentOut, !IO) :- 
