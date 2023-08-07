@@ -29,24 +29,6 @@ readerMain(!IO) :-
     logMsg(Content, !IO).
     
 
-% streamOpen(Result, ContentOut, !IO) :- 
-%     (if
-%         Result = ok(Stream)
-%     then
-%         write_string("Ok!\n", !IO),
-%         read_file_as_string(Stream, Content, !IO),
-%         (if 
-%             Content = ok(ContentOut)
-%         then
-%             write_string(ContentOut, !IO)
-%         else
-%             true
-%         )
-%     else
-%         write_string("Fehler!\n", !IO)
-%     ).
-
-%%%% different style
 streamOpen(ok(Stream), FileContent, !IO) :- 
 
     read_file_as_string(Stream, Content, !IO),
