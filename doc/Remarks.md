@@ -1,0 +1,1 @@
+In this directory some material for documentation of archticture is provided. Mostly it is intended for illustration, not for exact documentation of the code reality
