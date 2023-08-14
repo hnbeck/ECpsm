@@ -97,11 +97,13 @@ button .left.cmd.read -text Read -command Read
 button .left.cmd.write -text Write -command Write
 button .left.cmd.generate -text Generate -command GenPattern
 button .left.cmd.clear -text Clear -command ClearFact
+button .left.cmd.next -text Next -command NextFact
 pack .left.cmd.read -side left
 pack .left.cmd.write -side left
 pack .left.cmd.generate -side left
-pack .left.cmd.clear -sid left
-pack .left.cmd.add -sid left
+pack .left.cmd.clear -side left
+pack .left.cmd.add -side left
+pack .left.cmd.next -side left
 
 checkbutton .left.cmd.ruleOption -text Rules -variable ruleFlag
 pack .left.cmd.ruleOption -padx 10 
@@ -181,15 +183,19 @@ proc AddFact {} {
     ClearFact
 }
 
+proc NextFact {} {
+    $::aFact insert end {;}
+}
+
 proc Write {} {
     # if the fact contains a ">" its a rule
     # an odd otherwise
     if { [string first > $::fact 0] eq -1 } {
         set chan [open $::oddFile  w+]
-        puts $chan $::fact
+        puts $chan [$::output get 1.0 end]
     } else {
         set chan [open $::ruleFile  w+]
-        puts $chan $::fact
+        puts $chan [$::output get 1.0 end]
     }
   
     close $chan
