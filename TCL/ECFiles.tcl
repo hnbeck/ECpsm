@@ -41,39 +41,7 @@ proc ScrolledTextbox {parent args} {
     pack $parent.sy -side right -fill y
     pack $parent.fileText -side left -fill both -expand true
     return $parent.fileText
-}
 
-
-# what to do if Indicator is selected
-proc SelectIndicator {w y} {
-    $w select set anchor [$w nearest $y]
-    set id [$w get [$w curselect]]
-    # take only the indicator part
-    set indicator [string range $id 0 1 ]
-    set effect [string range $id 4 end]
-    if {$indicator ne " "} { $::aFact insert end [string trim $indicator]}
-    FillEffects $effect
-}
-
-# what to do if Effect is selected
-proc SelectEffect {w y} {
-
-  $w select set anchor [$w nearest $y]
-  set effect [$w get [$w curselect]]
-  # combine indicator with effect
-  set indicator [string index $::fact end]
-  set index  [expr { [$::aFact index end] -1}]
-  $::aFact delete $index
-  $::aFact insert end [join [list $effect $indicator] ""]
-}
-
-# fill the Effects if Indicator is selected
-proc FillEffects {effectString} {
-    $::EList delete 0 end
-    set effectList [split $effectString " "]
-    foreach item $effectList {
-        $::EList insert end $item
-    }
 }
 
 ###### create GUI
@@ -134,7 +102,7 @@ pack .left.setup.lEffects -side top -fill x
 pack .left.setup.effects -side top -fill x
 
 label .left.setup.lFact -text Facts -padx 5 -pady 5 -anchor w
-set aFact [entry .left.setup.fact -width 50 -textvariable fact]
+set factbox [entry .left.setup.fact -width 50 -textvariable fact]
 pack .left.setup.lFact -side top -fill x
 pack .left.setup.fact -side top -fill x
 
@@ -163,11 +131,71 @@ pack .right.t3.l2 -side top
 pack .right.t3.output -side top -fill x -expand true
 pack .right.t3 -side top -fill x -expand true
 
+# what to do if Indicator is selected
+proc SelectIndicator {w y} {
+    $w select set anchor [$w nearest $y]
+    set id [$w get [$w curselect]]
+    # take only the indicator part
+    set indicator  [FormatIndicator $id]
+    set effect [string range $id 4 end]
+    if {$indicator ne " "} { $::factbox insert end [string trim $indicator]}
+    FillEffects $effect
+}
+
+# what to do if Effect is selected
+proc SelectEffect {w y} {
+
+  $w select set anchor [$w nearest $y]
+  set effect [$w get [$w curselect]]
+
+  # get the effect parcel (eee)
+  set wide [expr { [string length $effect]}]
+  set index [expr { [string length $::fact] -1}]
+  set pos2  [expr { $index - 3}]
+  set pos1 [expr { $pos2 - $wide +1}]
+
+  set buffer [string replace $::fact $pos1 $pos2  $effect]
+  $::factbox delete 0 end
+  $::factbox insert end $buffer
+}
+
+# fill the Effects if Indicator is selected
+proc FillEffects {effectString} {
+    $::EList delete 0 end
+    set effectList [split $effectString " "]
+    foreach item $effectList {
+        $::EList insert end $item
+    }
+}
+
+proc GenParcel {} {
+    return yyyXXX
+}
+
+proc LastIndex {s} {
+    return [expr  {[string length $s] - 1 } ]
+}
+
+proc FormatIndicator {indicator} {
+    # Generate effect causa pattern
+    set parcel [GenParcel]
+    # get Indicator
+    set splitPoint [expr { [string first : $indicator 0 ] - 1}]
+    set indicatorID  [string trim [ string range $indicator 0 $splitPoint]]
+    # width of Indicator ID
+    set width [expr { [string length $indicatorID] - 1}]
+    set pos1 [expr { [LastIndex $parcel]- $width }]
+    set pos2 [LastIndex $parcel]
+    # set the indicator str inside the parcel at right place
+    set indicatorStr [string range $indicator 0 $width ]
+    return  [ string replace $parcel  $pos1 $pos2 $indicatorStr]
+}
+
 proc SpaceBar {w y a} {
 
     if {$::ruleFlag} {
         if {$a eq " "} {
-                $::aFact insert end ">"
+                $::factbox insert end ">"
         }
     }
     
@@ -175,7 +203,7 @@ proc SpaceBar {w y a} {
 }
 
 proc ClearFact {} {
-    $::aFact delete 0 end
+    $::factbox delete 0 end
 }
 
 proc AddFact {} {
@@ -184,7 +212,7 @@ proc AddFact {} {
 }
 
 proc NextFact {} {
-    $::aFact insert end {;}
+    $::factbox insert end {;}
 }
 
 proc Write {} {
